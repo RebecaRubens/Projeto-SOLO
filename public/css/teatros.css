@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: #f3f4f6;
+   
+}
+
+header {
+    background: darkolivegreen;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: aliceblue;
+    background-color: darkolivegreen;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.theater {
+    display: flex;
+    background: white;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.theater:hover {
+    transform: scale(1.02);
+}
+
+.theater img {
+    width: 50%;
+    object-fit: cover;
+    height: auto;
+    border-right: 5px solid #f3f4f6;
+}
+
+.info {
+    padding: 20px;
+    width: 50%;
+}
+
+.info h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: darkolivegreen;
+}
+
+.info p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.botaoT {
+    background-color:darkolivegreen; 
+    border: none; 
+    color: white; 
+    padding: 15px 32px; 
+    text-align: center;
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    margin: 4px 2px; 
+    cursor: pointer; 
+    border-radius: 12px; 
+    transition: background-color 0.5s ease; 
+}
+  
+  .botaoT:hover {
+    background-color: darkolivegreen;
+}

@@ -1,0 +1,508 @@
+body {
+    font-family: 'Share Tech Mono', monospace;
+    margin: 0;
+    padding: 0;
+}
+
+ * {
+    scroll-behavior: smooth;
+  }
+  
+  nav {
+      top: 0px;
+      position: fixed;
+      z-index: 3;
+      height: 50px;
+      width: 100%;
+      background-color: #1d1d1d;
+      opacity: 50%;
+      overflow: none;
+  }
+  
+  nav ul {
+      display: flex;
+      justify-content: space-evenly;
+      padding-right: 45px;
+      list-style: none;
+  }
+  
+  li {
+      text-align: center;
+      width: 200px;
+      height: 35px;
+  }
+  
+  nav a {
+      text-decoration: none;
+      color: #f5f5f5;
+      font-size: 18px;
+      opacity: 100%;
+  }
+  
+  nav a:hover {
+      cursor: pointer;
+      font-weight: bold;
+  }
+  
+  nav .arrow {
+      margin-left: 10px;
+      display: inline-block;
+      border: solid #000;
+      border-width: 0 2px 2px 0;
+      padding: 4px;
+      transition: 0.4s;
+      transform: rotate(45deg);
+      margin-bottom: 4px;
+  }
+  
+  .tools {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 160px;
+      height: 95px;
+      top: -100px;
+      z-index: 2;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      font-size: 18px;
+      background-color: #FFF;
+      position: fixed;
+      transition: 0.6s;
+  }
+  
+  .tools a {
+      text-decoration: none;
+      color:#000F;
+      font-size: 18px;
+      pointer-events: none;
+      margin-bottom: 5px;
+      transition: 0.5s;
+  }
+  
+  .tools a:hover {
+      transform: scale(1.05);
+  }
+
+.container {
+    text-align: center;
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    
+}
+.container h1 {
+    font-size: 54px;
+}
+/* Adicionando estilos para a imagem de fundo */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/imgInicio.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1; }
+
+.home-container {
+    position: relative;
+}
+
+
+.container {
+    text-align: center;
+    padding: 300px;
+    color: #fff;
+  margin: 0;
+  font-size: 36px;
+}
+
+
+
+.about {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    padding: 200px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cast {
+    text-align: center;
+    /* padding: 50px 0; */
+    background-color: #1d1d1d;
+}
+
+.cast h1 {
+    color: #f5f5f5;
+    font-size: 45px;
+
+}
+
+.cast-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+   background-color: #1d1d1d;
+}
+
+.card {
+    width: 200px;
+    height: 300px;
+    background-color: #f5f5f5;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    opacity: 0.7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.7s;
+}
+.card:hover{
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.about-me {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #1d1d1d;
+    color: #f5f5f5;
+    width: 1370px;
+    height: 500px;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+
+/* SOBRE MIM TESTE */
+.theater {
+    display: flex;
+    background: white;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.theater:hover {
+    transform: scale(1.02);
+}
+
+.theater img {
+    width: 50%;
+    object-fit: cover;
+    height: auto;
+    border-right: 5px solid #f3f4f6;
+}
+
+.info {
+    padding: 20px;
+    width: 50%;
+}
+
+.info h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: darkolivegreen;
+}
+
+.info p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+/* SOBRE MIM TESTE */
+
+
+
+
+/* sobre mim comeca */
+
+.background{
+    background-image: url('../img/sobremim/sobrebeca.jpg');
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size:1200px;
+    border: solid #000 2px;
+   
+}
+
+.container-text{
+    padding: 150px 0 0 130px;
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center; 
+    height: 450px; 
+    background-color: #1d1d1d;
+    color: #ccc;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+.text h3{
+    color: #fff;
+    font-size: 30px;
+}
+
+.text h1{
+    color: #fff;
+    margin-top: 5px;
+    margin-left: 15px;
+    
+}
+
+.text span{
+    color: #2ecc71; 
+}
+
+.text p{
+    color: #fff;
+    font-weight: 500;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+/* sobre mim acaba */
+
+.teaser {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #1d1d1d;
+   
+}
+
+.teaser h2 {
+    color: #f5f5f5;
+    font-size: 30px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Define o tamanho máximo do vídeo */
+    margin: 0 auto; /* Centraliza o vídeo horizontalmente */
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #1d1d1d;
+}
+
+.gallery h2 {
+    color: #f5f5f5;
+    font-size: 30px;
+}
+
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden; 
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: auto;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 2;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* SINOPSE COMEÇA */
+.containIncrement {
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    height: 5px;
+    background-repeat: repeat;
+    align-items: start;
+    justify-content: center;
+    margin-left: 300px ;
+    background-color: #1d1d1d;
+}
+
+.inputContainer{
+    margin-left: 100px;
+}
+.containerNP{
+   height: 700px;
+   display: flex;
+}
+
+.textos {
+   
+   width: 50vw;
+   font-size: 15px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.textos h1{
+    font-size: 40px;
+    margin-left: 100px;
+}
+
+.imagem{
+    background-image: url('');
+    /* background-size: cover; */
+    height: 700px;
+    width: 50vw;
+    background-position: center;
+    background-size: 3000px;
+    background-repeat: no-repeat;
+  
+} 
+
+.click{
+   display: flex;
+    font-size: 15px;
+    margin-left: 100px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* SINOPSE TERMINA */
+
+.containIncrement {
+    display: flex;
+    flex-direction: row;
+    width: 50px;
+    height: 5px;
+    background-repeat: repeat;
+    align-items: start;
+    justify-content: center;}
+
+
+.containerNP{
+   height: 700px;
+   display: flex;
+}
+
+.textos {
+   
+   width: 50vw;
+   font-size: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+.textos h1{
+    font-size: 40px;
+}
+
+.imagem{
+    background-image: url('../img/imgCabecaLogo.png');
+    /* background-size: cover; */
+    height: 700px;
+    width: 50vw;
+    background-position: center;
+    background-size: 3000px;
+    background-repeat: no-repeat;
+  
+} 
+
+
+
+
+
+
+/* RODAPE */
+
+.rodape {
+    background-color: #ccc; 
+    width: 100%; 
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+  }
+  .icon {
+      width: 60px;
+      height: 60px;
+  }
+  .contain1 {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+  }
+  .alinhate {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+  }
+
+.rodape {
+    margin-top: 245vh;
+}

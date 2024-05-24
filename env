@@ -1,0 +1,11 @@
+AMBIENTE_PROCESSO=producao
+
+DB_HOST=localhost
+DB_DATABASE='OdisseiaInbox'
+DB_USER='root'
+DB_PASSWORD='becajuba1605'
+DB_PORT=3306
+# configuracoes do servidor de aplicacao
+
+APP_PORT=8080
+APP_HOST=localhost
