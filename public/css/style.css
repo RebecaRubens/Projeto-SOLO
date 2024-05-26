@@ -331,6 +331,7 @@ body {
     text-align: center;
     padding: 50px 0;
     background-color: #1d1d1d;
+    width: 100vw;
 }
 
 .gallery h2 {
@@ -469,6 +470,38 @@ body {
   
 } 
 
+.container-interativo {
+    border: 2px solid #000;
+    border-radius: 100px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.container-interativo h2 {
+    margin-bottom: 20px;
+}
+
+.container-interativo p {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.container-interativo button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.container-interativo button:hover {
+    background-color: #0056b3;
+}
+
 
 
 
@@ -486,9 +519,11 @@ body {
     align-items: center;
     gap: 6rem;
   }
-  .icon {
+   .info .icon {
+    display: flex;
       width: 60px;
       height: 60px;
+      justify-content: flex-start;
   }
   .contain1 {
       display: flex;

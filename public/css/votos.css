@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .votacao-container {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    margin: 10px;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 50px;
+  }
+  
+  .botao-voto {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .botao-voto:hover {
+    background-color: #45a049;
+  }
+  
+  .resultado-votacao {
+    margin-top: 20px;
+  }
+  
+  

@@ -104,3 +104,27 @@ input[type="password"] {
     justify-content: center;
     align-items: center;
 }
+
+.styled-button {
+    background-color: #4CAF50; /* Cor de fundo */
+    border: none; /* Sem borda */
+    color: white; /* Cor do texto */
+    padding: 15px 32px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem sublinhado */
+    display: inline-block; /* Exibição em linha */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 4px 2px; /* Margem */
+    cursor: pointer; /* Cursor ao passar o mouse */
+    border-radius: 25px; /* Bordas arredondadas */
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+  }
+  
+  .styled-button:hover {
+    background-color: #45a049; /* Cor de fundo ao passar o mouse */
+  }
+
+  #cadastra {
+    width: 130px;
+    height: 50px ;
+  }
