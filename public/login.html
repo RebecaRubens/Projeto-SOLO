@@ -99,12 +99,15 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    localStorage.EMAIL_USUARIO = json.email;
+                    // sessionStorage.EMAIL_USUARIO = json.email;
+                    localStorage.NOME_USUARIO = json.nome;
+                    // sessionStorage.NOME_USUARIO = json.nome;
+                    localStorage.ID_USUARIO = json.id;
+                    // sessionStorage.ID_USUARIO = json.id;
                     
                     setTimeout(function () {
-                        window.location = "./index.html";
+                        window.location = "./Dashboard/dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

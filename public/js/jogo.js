@@ -5,6 +5,7 @@ const winningMessageTextElement = document.querySelector(
 );
 const winningMessage = document.querySelector("[data-winning-message]");
 const restartButton = document.querySelector("[data-restart-button]");
+const dashboardButton = document.querySelector("[data-dashboard-button]");
 
 let isCircleTurn;
 
@@ -38,13 +39,38 @@ const endGame = (isDraw) => {
     winningMessageTextElement.innerText = "Empate!";
   } else {
     winningMessageTextElement.innerText = isCircleTurn
-      ? "Os Humanos Venceram!"
-      : "Os robôs Venceram!";
+      ? "Os robôs Venceram!"
+      : "Os Humanos Venceram!";
+      const vencedor = isCircleTurn ? "Círculo" : "X";
+    registrarResultado(vencedor);
   }
 
   winningMessage.classList.add("show-winning-message");
 };
 
+const registrarResultado = (vencedor) => {
+  fetch("/resultados/registrar-resultado", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      vencedor: vencedor,
+    }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Erro ao registrar o resultado");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log("Resultado registrado com sucesso:", data);
+    })
+    .catch((error) => {
+      console.error("Erro:", error);
+    });
+};
 const checkForWin = (currentPlayer) => {
   return winningCombinations.some((combination) => {
     return combination.every((index) => {
@@ -106,3 +132,6 @@ const handleClick = (e) => {
 startGame();
 
 restartButton.addEventListener("click", startGame);
+dashboardButton.addEventListener("click", () => {
+  window.location.href = "./Dashboard/dashboard.html";
+});

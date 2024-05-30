@@ -12,4 +12,16 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.post("/finalizar", function (req, res) {
+    usuarioController.finalizar(req, res);
+});
+
+router.get("/votos", function (req, res) {
+    usuarioController.votos(req, res);
+});
+
+
+
+
+
 module.exports = router;

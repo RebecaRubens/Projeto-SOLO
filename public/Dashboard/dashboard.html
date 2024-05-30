@@ -9,25 +9,25 @@
     <title>AquaTech | Dashboards</title>
 
     
-    <!-- <link rel="stylesheet" href="css/dashboards.css"> -->
-    <script src="js/sessao.js"></script>
-    <script src="js/alerta.js"></script>
+    <link rel="stylesheet" href="../css/dashboards.css">
+    <!-- <script src="js/sessao.js"></script> -->
+    <!-- <script src="js/alerta.js"></script> -->
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <!-- <link -->
+        <!-- href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" -->
+        <!-- rel="stylesheet"> -->
 
     <!-- scripts do Chart.js - 2022-1 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+<script src="dash.js"></script>
     <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script> -->
 </head>
 
 <!-- <body onload=" atualizarFeed()"> -->
 
-<body>
+<body onload="obterDadosGrafico()">
 
     <!DOCTYPE html>
 <html lang="en">
@@ -100,14 +100,14 @@
             <li><a href="../jogo.html">Jogar Robos VS Humanos</a></li>
             <li><a href="#">Gráficos</a></li>
             <li><a href="../votos.html">Votação</a></li>
-            <li><a href="../index.html">Sair</a></li>
+            <li><a href="../index.html">Ir para home</a></li>
         </ul>
     </div>
     <div class="content">
         <!-- Conteúdo principal da página -->
     </div>
 
-    <div class="grafico1">
+    <div class="grafico1" style="width: 300px; height: 300px; border: solid red 2px">
         <canvas id="myChart"></canvas>
       </div>
 </body>
@@ -117,28 +117,9 @@
 </body>
 
 </html>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src=˜dash.js˜></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
 
 <script>
-  const ctx = document.getElementById('myChart');
-
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-</script>
+  
+</script> -->
