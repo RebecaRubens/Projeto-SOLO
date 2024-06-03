@@ -2,95 +2,39 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="../assets/icon/2.ico" type="image/x-icon">
+  
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTech | Dashboards</title>
+    <title>3024: Uma Odisséia INBOX | Dashboard</title>
 
-    
+
     <link rel="stylesheet" href="../css/dashboards.css">
-    <!-- <script src="js/sessao.js"></script> -->
-    <!-- <script src="js/alerta.js"></script> -->
-
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
-    <!-- <link -->
-        <!-- href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" -->
-        <!-- rel="stylesheet"> -->
-
-    <!-- scripts do Chart.js - 2022-1 -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="dash.js"></script>
-    <!--FONT AWESOME-->
-    <!-- <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script> -->
-</head>
-
-<!-- <body onload=" atualizarFeed()"> -->
-
-<body onload="obterDadosGrafico()">
-
-    <!DOCTYPE html>
-<html lang="en">
-<head>
     <style>
- body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            height: 100vh;
-            background-color: #f0f0f0;
-        }
-
-        .menu {
-            width: 300px;
-            background-color: darkolivegreen;
-            color: #fff;
-            padding: 30px 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        
+        .chart-container {
            
-        }
-
-        .menu h2 {
-            margin-top: 0;
-            color: #ecf0f1;
+            width: 800px;
             text-align: center;
-            margin-bottom: 40px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            height: 500px;
+        }
+        canvas {
+            width: 100% !important;
+            height: auto !important;
         }
 
-        .menu ul {
-            list-style-type: none;
-            padding: 0;
-            width: 100%;
+        .pai{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: calc(100% - 300px);
+            height: 100vh;
         }
-
-        .menu ul li {
-            margin: 20px 0;
-            width: 100%;
-        }
-
-        .menu ul li a {
-            display: block;
-            padding: 15px;
-            background-color: #1d1d1d;
-            color: #fff;
-            text-decoration: none;
-            text-align: center;
-            border-radius: 15px;
-            transition: background-color 0.3s ease;
-        }
-
-        .menu ul li a:hover {
-            background-color: #3498db;
-        }
-
-        .content {
-            flex: 1;
-            padding: 40px;
-        }
+        
     </style>
 </head>
 <body>
@@ -98,28 +42,107 @@
         <h2>Olá, que legal te ver por aqui!</h2>
         <ul>
             <li><a href="../jogo.html">Jogar Robos VS Humanos</a></li>
-            <li><a href="#">Gráficos</a></li>
+            
             <li><a href="../votos.html">Votação</a></li>
             <li><a href="../index.html">Ir para home</a></li>
         </ul>
     </div>
-    <div class="content">
-        <!-- Conteúdo principal da página -->
-    </div>
-
-    <div class="grafico1" style="width: 300px; height: 300px; border: solid red 2px">
+    <div class="pai">
+    <h1 style="text-align: center;">Através desse gráfico, saiba quais são os personagens favoritos do público. Clique em "votação" e nos conte qual é o seu personagem preferido!</h1>
+    <div class="chart-container">
         <canvas id="myChart"></canvas>
-      </div>
-</body>
-</html>
-
+    </div>
+</div>
 
 </body>
 
 </html>
-<script src=˜dash.js˜></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
 
+<!-- <script src="dash.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  
-</script> -->
+
+
+    obterDadosGrafico()
+    function obterDadosGrafico() {
+        fetch(`/usuarios/votos`)
+            .then(function (resposta) {
+                if (resposta.ok) {
+                    console.log('aaaaaaaaaaa')
+                    resposta.json().then(function (dados) {
+                        console.log("Dados recebidos: ", JSON.stringify(dados));
+                        dados.reverse();
+
+                        console.log(dados)
+                        plotarGrafico_1(dados);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado da pergunta1 ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    function plotarGrafico_1(dados) {
+        console.log("Dados recebidos no plotar: ", JSON.stringify(dados));
+        console.log('Iniciando plotagem do gráfico...');
+        console.log(dados)
+        var votos = [];
+
+        for (var i = 0; i < dados.length; i++) {
+            var registo = dados[i]
+            votos.push(registo.Option1)
+            votos.push(registo.Option2)
+            votos.push(registo.Option3)
+            votos.push(registo.Option4)
+            votos.push(registo.Option5)
+            votos.push(registo.Option6)
+            votos.push(registo.Option7)
+
+//continuar
+        }
+
+        
+
+        const ctx = document.getElementById('myChart');
+        var labels = ['Blogueira', 'Narrador', 'Lari Apaixonada', 'Robô Assasino', 'Morita', 'Vovózinha', 'Faxineira' ]; //colocar nome dos 7 personagens
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Quantidade de VOTOS',
+                    data: votos,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(99, 255, 132, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(99, 255, 132, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                
+            }
+        });
+    }
+</script>

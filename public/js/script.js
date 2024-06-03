@@ -25,8 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-let currentIndex = 0;
 
+
+let currentIndex = 0;
 //Função para mostrar a próxima imagem na galeria
 function nextImage() {
   const images = document.querySelectorAll('.carousel-images img'); //obtem todas as imagens dentro da classe .carousel-images
@@ -41,15 +42,22 @@ function prevImage() {
 }
 
 function updateCarousel() {
-  const images = document.querySelector('.carousel-images');
-  const imageWidth = images.firstElementChild.offsetWidth;
-  const offset = -currentIndex * imageWidth;
+  const images = document.querySelector('.carousel-images'); //seleciona as imagens q estao dentro
+  const imageWidth = images.firstElementChild.offsetWidth; //seleciona a primeira imagem do carrossel
+  //offsetWidth é a largura total da imagem, incluindo bordas e padding, esta largura é armazenada na constante imageWidth.
+  const offset = -currentIndex * imageWidth;//currentIndex é a posição atual no carrossel
+  //Multiplicamos currentIndex pela imageWidth para calcular a distância total que precisamos mover o container de imagens.
+  //O sinal de menos é usado porque queremos mover o container para a esquerda (direção negativa no eixo X).
   images.style.transform = `translateX(${offset}px)`;
-  //é responsável por atualizar a exibição da galeria
-  //calcula o deslocamento necessário para mostrar a imagem atual com base no currentIndex,
-  // multiplica esse deslocamento pela largura de cada imagem e, em seguida, 
-  //aplica essa transformação à galeria para mover as imagens horizontalmente.
-  // Isso cria o efeito de "carrossel", onde as imagens parecem deslizar para a esquerda ou para a direita.
-}
+  //images.style.transform é uma propriedade que permite aplicar transformações CSS ao elemento.
+  // offset é o valor calculado anteriormente que indica quantos pixels mover o elemento.
 
+  //exemplo: 
+//currentIndex = 2
+// imageWidth = 200 pixels
+// Cálculo:
+// offset = -2 * 200
+// offset = -400
+// Isso significa que precisamos mover o container de imagens 400 pixels para a esquerda para mostrar a terceira imagem.
+}
 // GALERIA TERMINA

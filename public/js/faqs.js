@@ -7,29 +7,30 @@ const faqs = [
     { question: 'Qual é a importância do teatro na sociedade?', answer: 'O teatro tem uma importância significativa na sociedade, pois oferece uma plataforma para a expressão artística e cultural, promove a reflexão sobre questões sociais, políticas e humanas, educa e entretém o público, e fomenta o senso de comunidade e empatia através da experiência compartilhada da performance ao vivo.' },
 ];
 
-const faqsDiv = document.getElementById('faqs');
+const faqsDiv = document.getElementById('faqs'); //Seleciona o elemento HTML com o id faqs onde as FAQs serão inseridas.
+
 
 faqs.forEach(faq => {
-    const faqDiv = document.createElement('div');
-    faqDiv.className = 'faq';
+    const faqDiv = document.createElement('div'); // Cria um novo elemento HTML <div>.
+    faqDiv.className = 'faq'; //Define a classe CSS deste <div> como faq, pode ser usada para estilizar o elemento com CSS.
 
-    const questionDiv = document.createElement('div');
-    questionDiv.className = 'question';
-    questionDiv.textContent = faq.question;
-    faqDiv.appendChild(questionDiv);
+    const questionDiv = document.createElement('div'); //Cria um novo elemento HTML <div> para a pergunta
+    questionDiv.className = 'question'; //Define a classe CSS deste <div> como question.
+    questionDiv.textContent = faq.question; //Define o texto deste <div> como a pergunta atual da FAQ.
+    faqDiv.appendChild(questionDiv); //faz com que a div da pergunta vire filho do div principal, faqDiv
 
     const answerDiv = document.createElement('div');
     answerDiv.className = 'answer';
     answerDiv.textContent = faq.answer;
     faqDiv.appendChild(answerDiv);
 
-    questionDiv.addEventListener('click', () => {
+    questionDiv.addEventListener('click', () => { //Isso significa que toda vez que questionDiv for clicado, a função dentro do addEventListener será executada.
         const isVisible = answerDiv.style.display === 'block';
-        document.querySelectorAll('.answer').forEach(ans => ans.style.display = 'none');
-        document.querySelectorAll('.question').forEach(q => q.classList.remove('active'));
-        if (!isVisible) {
-            answerDiv.style.display = 'block';
-            questionDiv.classList.add('active');
+        document.querySelectorAll('.answer').forEach(ans => ans.style.display = 'none'); //esconder todas as respostas
+        document.querySelectorAll('.question').forEach(q => q.classList.remove('active')); //repete sobre cada elemento selecionado e remove a classe active de cada um deles.
+        if (!isVisible) { //Verifica se a resposta não estava visível antes do clique 
+            answerDiv.style.display = 'block'; //Define a propriedade display do answerDiv para 'block', tornando a resposta visível.
+            questionDiv.classList.add('active'); // Adiciona a classe active ao questionDiv para aplicar um estilo 
         }
     });
 

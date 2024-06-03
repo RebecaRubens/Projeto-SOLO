@@ -79,10 +79,10 @@ function finalizar(req, res) {
     // Faça as validações dos valores
     if (usuario_idUsuario == undefined) {
         res.status(400).send("Sua resposta está undefined!");
-    }else if (voto_idVoto == undefined) {
+    } else if (voto_idVoto == undefined) {
         res.status(400).send("Seu fkusuario está undefined!");
-    } 
-     else {
+    }
+    else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.finalizar(usuario_idUsuario, voto_idVoto)
@@ -104,21 +104,24 @@ function finalizar(req, res) {
 }
 function votos(req, res) {
 
-        usuarioModel.votos()
-            .then(
-                function () {
-                   
+    usuarioModel.votos().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado)
+        }
+        else {
+            res.status(204).send("nenhum resultado encontrado")
+        }
 
-                  
-                }
-            ).catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
+
     }
+    ).catch(
+        function (erro) {
+            console.log(erro);
+            console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        }
+    );
+}
 
 module.exports = {
     autenticar,

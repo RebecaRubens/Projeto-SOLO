@@ -90,17 +90,16 @@
     if( nomeVar.length <1 || indice_arroba <0 || senhaVar <=6  ){
       
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Algum dado inserido está incorreto: <br> o campo nome precisa conter mais de 1 caractere, <br> o E-mail deve conter @, <br> Sua senha deve conter mais de 6 caracteres, <br> Sua senha de confirmação deve ser igual a Senha, <br> Seu CPF precisa conter exatamente 11 caracteres)";}
-    
+      // mensagem_erro.innerHTML =
+        // "(Algum dado inserido está incorreto: <br> o campo nome precisa conter mais de 1 caractere, <br> o E-mail deve conter @, <br> Sua senha deve conter mais de 6 caracteres, <br> Sua senha de confirmação deve ser igual a Senha, <br> Seu CPF precisa conter exatamente 11 caracteres)";}
+        alert("Algum dado inserido está incorreto: o campo nome precisa conter mais de 1 caractere, o E-mail deve conter @ e Sua senha deve conter mais de 6 caracteres");}
     if (
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" 
     ) {
       cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+      alert("todos os campos estão em branco");
 
       finalizarAguardar();
       return false;
@@ -130,8 +129,8 @@
         if (resposta.ok) {
           cardErro.style.display = "block";
 
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+          
+            alert("Redirecionando para tela de Login...");
 
           setTimeout(() => {
             window.location = "login.html";

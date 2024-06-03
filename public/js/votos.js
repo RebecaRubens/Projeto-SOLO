@@ -5,12 +5,12 @@ function enviar(){
             var escolhaPersonagem = []
 
             for (var A = 0; A < pergunta.length; A++) {
-                if (pergunta[A].checked) {
+                if (pergunta[A].checked) { //checked é uma funcao que usamos quanto temos varios inputs
                     input = pergunta[A].value;
                     escolhaPersonagem.push(input)
                     console.log(localStorage.ID_USUARIO)
                     break;
-                } 
+                } // SE a input foi selecionada, enviamos o valor dele, nomeado como input para o vetor escolha personagem, depois disso, usamos a função break para interromper o looping, pois ja achamos qual input foi selecionado!
 
             }
             // console.log(escolhaPersonagem)
@@ -31,57 +31,17 @@ function enviar(){
     
             if (resposta.ok) {
                 console.log(resposta);
-                alert('Seu voto foi processado')
+
+                Swal.fire({
+                    title: 'Seu voto foi processado',
+                    icon: 'success',
+                    confirmButtonText: 'OK' //substitui o alert
+                }).then(function() {
+                    window.location.href = "./Dashboard/dashboard.html";
+                });
                 
+
                             }
                     })
                 }
 
-// if(input == ''){
-//     alert('Selecione um personagem!')
-// }
-// else{
-//     fetch("/usuarios/finalizar", {
-//         method: "POST",
-//         headers: {
-//             "Content-Type": "application/json"
-//         },
-//         body: JSON.stringify({
-
-//             inputServer: input
-           
-//         })
-//     }).then(function (resposta) {
-//         console.log("ESTOU NO THEN DO finalizar()!")
-
-//         if (resposta.ok) {
-//             console.log(resposta);
-
-//             resposta.json().then(json => {
-//                 console.log(json);
-//                 console.log(JSON.stringify(json));
-              
-//                 alert('Seu voto foi processado')
-//                 setTimeout(function () {
-//                     window.location = "./index.html";
-//                 }, 1000); // apenas para exibir o loading
-
-//             });
-
-//         } else {
-
-//             console.log("Houve um erro ao tentar realizar o login!");
-
-//             resposta.text().then(texto => {
-//                 console.error(texto);
-//                 finalizarAguardar(texto);
-//             });
-//         }
-
-//     }).catch(function (erro) {
-//         console.log(erro);
-//     })
-
-//     return false;
-// }
-// }
